@@ -1,4 +1,4 @@
-from lxml import objectify
+#Takes in the data set loads into pandas then saves off as a csv
 import os
 import pandas as pd
 import xml.etree.ElementTree as et 
@@ -11,9 +11,6 @@ df = pd.DataFrame(columns = headers)
 for file in os.listdir():
         if ".xml" not in file:
                 continue
-#        xml = objectify.parse(file)
-#        root = xml.getroot()
-#        print(root['ymin'])
         xml = et.parse(file)
         r = xml.getroot()
         filename = r[1].text

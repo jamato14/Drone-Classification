@@ -26,4 +26,11 @@ for file in os.listdir():
         df = df.append(pd.Series([filename, width, height, xmin, ymin, xmax, ymax], index = df.columns), ignore_index = True)
 
 print(df)
-df.to_csv('/Users/josephamato/Drone-Classification/xmlData.csv', index=False)
+
+percent = 80
+train = df.head(int(len(df)*(percent/100)))
+test = df.iloc[max(train.index):]
+
+
+train.to_csv('/Users/josephamato/Drone-Classification/trainData.csv', index=False)
+test.to_csv('/Users/josephamato/Drone-Classification/testData.csv', index=False)

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<html>
+	<body>
+		<h1>Listings</h1>
+		<ul>
+
+			{% for file in files %}
+			<li> <a href= "../static/test_images/{{file}}">{{file}}</a></li>
+			{% endfor %}
+		
+		</ul> 
+	</body>
+</html>
+
